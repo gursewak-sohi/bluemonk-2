@@ -1,0 +1,45 @@
+// Animation SCSS
+@include keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@include keyframes(moveLeft) {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+ 
+
+@include keyframes(scroll-first) {
+    0% {
+        transform: translateX(var(--anim-width))
+    }
+    to {
+        transform: translateX(calc((-1) * var(--anim-width)))
+    }
+}
+
+@include keyframes(scroll-second) {
+    0% {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(calc((-1) * (var(--anim-width) * 2)));
+    }
+}
+ 
+ 
+
+ 
+

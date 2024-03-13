@@ -1,0 +1,37 @@
+// Variable SCSS
+// Fonts
+$font-lato: ('Lato', sans-serif);
+// Colors
+$light-green: #B8DBCB;
+$dark-green: #154A3C;
+$off-white: #F7F7F2;
+$orange: #E3731A;
+
+
+$primary: #EE6C4D;
+$white: #FFFFFF;
+$black: #000000;
+
+$neutral-500: #555C6C;
+// Breakpoints
+$mobile-width: 767px;
+$tablet-width: 991px;
+$laptop-width: 1199px;
+$desktop-width: 1399px;
+$tv-width: 1499px;
+// Container Sizes
+$container-lg: 1288px;
+$container: 1084px;
+$gutter-x: 40px;
+$gutter-x-xs: 24px;
+// Transition
+$link-transition: 500ms all cubic-bezier(0.76, 0, 0.24, 1);
+$btn-transition: 500ms background-color cubic-bezier(0.76, 0, 0.24, 1),
+300ms color cubic-bezier(0.76, 0, 0.24, 1),
+300ms border-color cubic-bezier(0.76, 0, 0.24, 1),
+300ms opacity cubic-bezier(0.76, 0, 0.24, 1),
+300ms box-shadow cubic-bezier(0.76, 0, 0.24, 1),
+300ms stroke cubic-bezier(0.76, 0, 0.24, 1),
+300ms fill cubic-bezier(0.76, 0, 0.24, 1);
+ 
+ 

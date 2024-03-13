@@ -1,0 +1,89 @@
+//  Button SCSS
+.btn {
+    cursor: pointer;
+    font-family: $font-lato;
+    border: none;
+    transition: $btn-transition;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    flex-shrink: 0;
+    & svg {
+        flex-shrink: 0;
+        & * {
+            transition: $btn-transition;
+        }
+    }
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.btn-sm {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    padding: 10px 32px 13px;
+    border-radius: 50px;
+}
+
+.btn-md {
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+    position: relative;
+    padding: 8px 10px;
+    min-width: 122px;
+    border-radius: 50px;
+}
+
+
+.btn-primary {
+    color: $white;
+    border: 1px solid $black;
+    background-color: $black;
+    &:hover {
+        background-color: $black;
+        color: $white;
+        border-color: $black;
+    }
+}
+ 
+ 
+ 
+.btn-link {
+    text-decoration: none;
+    position: relative;
+    &::before {
+        height: 2px;
+        background-color: $black;
+        width: 0px;
+        content: '';
+        bottom: 0px;
+        transition: $link-transition;
+        position: absolute;
+        left: 0;
+         
+    }
+    &:hover {
+        &::before {
+            width: 100%;
+            @include laptop {
+                width: 0;
+            }
+        }
+    }
+    &.btn-active {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+  

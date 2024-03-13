@@ -1,0 +1,157 @@
+// Common SCSS
+
+ 
+
+main {
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.hide-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+ .text-neutral-500 {
+    color: $neutral-500;
+ }
+
+.reveal-image {
+    position: relative;
+    --scaleX: 1;
+    --scaleFull: 1.2;
+    overflow: hidden;
+    &:before {
+        background-color: $off-white;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: '';
+        transform: scaleX(var(--scaleX));
+        transform-origin: left;
+        transition: 0.5s all ease-out;
+        z-index: 10;
+    }
+    & img {
+        transition: 0.5s all ease-out;
+        transform: scale(var(--scaleFull));
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+  
+
+
+ 
+section {
+    position: relative;
+    padding: 140px 0;
+    @include laptop {
+        padding: 120px 0;
+    }
+    @include tablet {
+        padding: 100px 0;
+    }
+    @include mobile {
+        padding: 80px 0;
+    }
+}
+
+.pt-none {
+    padding-top: 0;
+}
+
+.pb-none {
+    padding-bottom: 0;
+}
+
+ 
+.pt-small {
+    padding-top: 60px;
+    @include laptop {
+        padding-top: 54px;
+    }
+    @include tablet {
+        padding-top: 48px;
+    }
+    @include mobile {
+        padding-top: 42px;
+    }
+}
+
+
+.pb-small {
+    padding-bottom: 60px;
+    @include laptop {
+        padding-bottom: 54px;
+    }
+    @include tablet {
+        padding-bottom: 48px;
+    }
+    @include mobile {
+        padding-bottom: 42px;
+    }
+}
+
+.pt-medium {
+    padding-top: 94px;
+    @include laptop {
+        padding-top: 74px;
+    }
+    @include tablet {
+        padding-top: 54px;
+    }
+    @include mobile {
+        padding-top: 34px;
+    }
+}
+
+
+.pb-medium {
+    padding-bottom: 94px;
+    @include laptop {
+        padding-bottom: 84px;
+    }
+    @include tablet {
+        padding-bottom: 74px;
+    }
+    @include mobile {
+        padding-bottom: 64px;
+    }
+}
+
+.pt-large {
+    padding-top: 180px;
+    @include laptop {
+        padding-top: 140px;
+    }
+    @include tablet {
+        padding-top: 120px;
+    }
+    @include mobile {
+        padding-top: 100px;
+    }
+}
+
+.pb-large {
+    padding-bottom: 180px;
+    @include laptop {
+        padding-bottom: 140px;
+    }
+    @include tablet {
+        padding-bottom: 120px;
+    }
+    @include mobile {
+        padding-bottom: 100px;
+    }
+}
+
+ 
+
+
+ 
