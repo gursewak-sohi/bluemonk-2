@@ -532,9 +532,8 @@
                 }
             }
             & .table-body {
+                width: 100%;
                 @include mobile {
-                    width: 100%;
-                    // overflow: initial;
                     padding-bottom: 32px;
                 }
                 & .swiper-wrapper {
