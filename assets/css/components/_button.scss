@@ -32,23 +32,58 @@
     position: relative;
     padding: 10px 32px 13px;
     border-radius: 50px;
+    @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 10px 20px 12px;
+    }
 }
 
 .btn-md {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
     text-decoration: none;
     position: relative;
-    padding: 8px 10px;
+    padding: 14px 20px;
     min-width: 122px;
     border-radius: 50px;
+    @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 10px 20px 12px;
+    }
 }
 
 
-.btn-primary {
+
+
+.btn-dark {
     color: $white;
     border: 1px solid $black;
     background-color: $black;
+    &:hover {
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+}
+
+.btn-primary {
+    color: $white;
+    border: 1px solid $primary;
+    background-color: $primary;
+    &:hover {
+        background-color: $black;
+        color: $white;
+        border-color: $black;
+    }
+}
+
+.btn-dark-outline {
+    color: $black;
+    border: 1px solid $black;
+    background-color: $white;
     &:hover {
         background-color: $black;
         color: $white;
@@ -87,3 +122,20 @@
     }
 }
   
+.btn-more {
+    color: $neutral-400;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    background-color: transparent;
+    border: none;
+    display: none;
+    @include mobile {
+        display: flex;
+    }
+    &.active {
+        @include mobile {
+            display: none;
+        }
+    }
+}

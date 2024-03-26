@@ -3,9 +3,85 @@ body {
     font-family: $font-lato;
     font-weight: 400;
     font-size: 16px;
-    line-height: 22.4px;
+    line-height: 28px;
     overflow-x: hidden;
+    color: $black;
 }
+
+
+h1,
+.h1 {
+    font-family: $font-lato;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 62px;
+    @include tablet {
+        font-size: 42px;
+        line-height: 52px;
+    }
+}
+
+ 
+
+h2,
+.h2 {
+    font-family: $font-lato;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 53px;
+    @include tablet {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+h6,
+.h6 {
+    font-family: $font-lato;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+ 
+ 
+
+p, .p {
+    font-family: $font-lato;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;  
+}
+
+.body-md {
+    font-size: 18px;
+    line-height: 26px;
+    font-family: $font-lato;
+    font-weight: 400;
+    @include tablet {
+        font-size: 16px;
+        line-height: 22.4px;
+    }
+}
+
+.body-lg {
+    font-size: 20px;
+    line-height: 28px;
+    font-family: $font-lato;
+    font-weight: 400;
+    @include tablet {
+        font-size: 16px;
+        line-height: 22.4px;
+    }
+}
+
+
 
 
 h4,
@@ -28,17 +104,6 @@ h5,
     font-weight: 700; 
 }
 
-
-.body-lg {
-    font-size: 20px;
-    line-height: 28px;
-    font-family: $font-lato;
-    font-weight: 400;
-    @include tablet {
-        font-size: 16px;
-        line-height: 22.4px;
-    }
-}
 
  
  

@@ -51,11 +51,9 @@
             justify-content: space-between;
             background: rgb(152,193,217);
             background: linear-gradient(180deg, rgba(152,193,217,1) 0%, rgba(238,108,77,0.3) 60% rgba(238,108,77,0) 100%);   
-            padding: 68px 32px;
+            padding: 56px 32px;
             border-radius: 24px;
-            @include tablet {
-                padding: 56px 32px;
-            }
+            
             & .nav {
                 display: flex;
                 flex-direction: column;

@@ -39,7 +39,9 @@
     overflow: hidden;
     transition: height 500ms cubic-bezier(0.76, 0, 0.24, 1);
     &:not(.active) {
-        height: 0;
+        @include mobile {
+            height: 0;
+        }
     }
 }
 

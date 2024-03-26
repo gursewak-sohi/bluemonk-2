@@ -2,31 +2,37 @@
 // Fonts
 $font-lato: ('Lato', sans-serif);
 // Colors
-$light-green: #B8DBCB;
-$dark-green: #154A3C;
-$off-white: #F7F7F2;
-$orange: #E3731A;
-
-
 $primary: #EE6C4D;
 $white: #FFFFFF;
 $black: #000000;
+ 
 
+$neutral-50: #E8EAED;
+$neutral-100: #E8EAED;
+$neutral-200: #D1D4DB;
+$neutral-300: #A4A9B7;
+$neutral-400: #80899C;
 $neutral-500: #555C6C;
+$neutral-600: #363A45;
+
+$gradient-color-1: #005CFF;
+$gradient-color-2: #EAD1FF;
+
 // Breakpoints
 $mobile-width: 767px;
-$tablet-width: 991px;
+$tablet-width: 1024px;
 $laptop-width: 1199px;
 $desktop-width: 1399px;
-$tv-width: 1499px;
+
 // Container Sizes
 $container-lg: 1288px;
 $container: 1084px;
 $gutter-x: 40px;
 $gutter-x-xs: 24px;
+
 // Transition
 $link-transition: 500ms all cubic-bezier(0.76, 0, 0.24, 1);
-$btn-transition: 500ms background-color cubic-bezier(0.76, 0, 0.24, 1),
+$btn-transition: 300ms background-color cubic-bezier(0.76, 0, 0.24, 1),
 300ms color cubic-bezier(0.76, 0, 0.24, 1),
 300ms border-color cubic-bezier(0.76, 0, 0.24, 1),
 300ms opacity cubic-bezier(0.76, 0, 0.24, 1),

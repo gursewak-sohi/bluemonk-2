@@ -1,24 +1,25 @@
 // Swiper CSS {
 .swiper-pagination {
-    bottom: -30px;
+    bottom: 0px;
     position: absolute;
     display: flex;
     align-items: center;
     column-gap: 6px;
     left: 50%;
     transform: translateX(-50%);
-    @include mobile {
-        bottom: -21px;
-    }
     & .swiper-pagination-bullet {
-        width: 8px;
-        height: 8px;
-        background-color: $off-white;
-        border-radius: 8px;
-        transition: $link-transition;
-        &.swiper-pagination-bullet-active {}
+        width: 14px;
+        height: 14px;
+        background-color: $neutral-50;
+        border-radius: 14px;
+        // transition: $link-transition;
+        &.swiper-pagination-bullet-active {
+            background: linear-gradient(180deg, $gradient-color-1 0%, $gradient-color-2 100%);
+        }
     }
 }
+ 
+
 
 .swiper-button-prev,
 .swiper-button-next {

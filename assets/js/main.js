@@ -91,36 +91,8 @@
     }
     showTabs('[data-tab]', '.tab-content');
  
-
- 
-
     
-
-    // Out Team  Swiper
-    const teamSwiper = document.querySelectorAll('[data-swiper="teamSwiper"]');
-    teamSwiper.forEach((swiperElement) => {
-            const swiper = new Swiper(swiperElement.querySelector('.swiper'), {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                grabCursor: true,
-                navigation: {
-                    nextEl: swiperElement.querySelector('.swiper-button-next'),
-                    prevEl: swiperElement.querySelector('.swiper-button-prev'),
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3,
-                    }
-                },
-            });
-        });
-
-
-  
-
-    
-    // // Show Collapse with Wrapper JS
-   
+    // Show Collapse with Wrapper JS
     const showCollapseFunc = (collapseLinkID, collapseContentID, wrapperID) => {
         let collapseLinks = document.querySelectorAll(collapseLinkID),
             collapseContent = document.querySelectorAll(collapseContentID);
@@ -174,7 +146,7 @@
     }
     showCollapseFunc('[data-collapse]', '.collapse', '[data-parent="collapse"]');
 
-  
+ 
 
     // gsap animations
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -203,20 +175,91 @@
     }
 
     // Line width code goes here
-    const lineX = document.querySelectorAll('.line-x');
-    if (lineX) {
-        ScrollTrigger.batch(lineX, {
-            onEnter: elements => {
-                gsap.to(elements, {
-                    "--scaleX": 1,
-                    stagger: 0.4,
-                    ease: 'none',
-                    delay: 0.5
-                });
+    // const revealImageX = document.querySelectorAll('.reveal-image-x');
+    // if (revealImageX) {
+    //     ScrollTrigger.batch(revealImageX, {
+    //         onEnter: elements => {
+    //             gsap.to(elements, {
+    //                 "--height": 0,
+    //                 stagger: 0.4,
+    //                 ease: 'none',
+    //                 delay: 0.5
+    //             });
+    //         },
+    //         once: false
+    //     });
+    // }
+
+    // Client Swiper
+    const clientSwiper = document.querySelector("#clientSwiper");
+    if (clientSwiper) {
+        const swiper = new Swiper('#clientSwiper', {
+            // Optional parameters
+            slidesPerView: 2,
+            spaceBetween: 12,
+            grabCursor: true,
+            slidesPerGroup: 2, 
+            pagination: {
+                el: "#clientSwiper .swiper-pagination",
             },
-            once: false
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 12,
+                    slidesPerGroup: 4, 
+                },
+                1025: {
+                    slidesPerView: 5,
+                    spaceBetween: 22.5,
+                    slidesPerGroup: 5, 
+                }
+            },
         });
     }
+
+     // Plan Swiper
+     const planSwiper = document.querySelector("#planSwiper");
+     if (planSwiper && screen.width < 768) {
+         const swiper = new Swiper('#planSwiper', {
+             // Optional parameters
+             slidesPerView: 1,
+             spaceBetween: 24,
+             grabCursor: true,
+             slidesPerGroup: 1, 
+            //  autoHeight: true,
+             pagination: {
+                 el: "#planSwiper .swiper-pagination",
+             }
+         });
+     }
+
+     // Compare Swiper
+     const compareSwiper = document.querySelector("#compareSwiper");
+     if (compareSwiper && screen.width < 768) {
+         const swiper = new Swiper('#compareSwiper', {
+             // Optional parameters
+             slidesPerView: 1,
+             spaceBetween: 8,
+             grabCursor: true,
+             pagination: {
+                 el: "#compareSwiper .swiper-pagination",
+             }
+         });
+     }
+
+      // Case Swiper
+      const caseSwiper = document.querySelector("#caseSwiper");
+      if (caseSwiper && screen.width < 768) {
+          const swiper = new Swiper('#caseSwiper', {
+              // Optional parameters
+              slidesPerView: 1,
+              spaceBetween: 24,
+              grabCursor: true,
+              pagination: {
+                  el: "#caseSwiper .swiper-pagination",
+              }
+          });
+      }
 
     startGsapAnimation();
 
@@ -274,6 +317,35 @@
 
     }
   
+    const gapAnimateCount = (count) => {
+        var zero = { val: 0 },
+            num = parseFloat(count.getAttribute('data-number')),
+            split = (num + "").split("."),
+            decimals = split.length > 1 ? split[1].length : 0;
+    
+      
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: count,
+                start: "top bottom",  
+                end: "bottom top",
+                toggleActions: "restart pause resume pause",
+                onEnter: () => { tl.restart(); },
+                onLeaveBack: () => { tl.restart(); },
+                markers: false,  
+            },
+            defaults: { duration: 6, ease: "Power4.out" },  
+        });
+    
+        tl.to(zero, {
+            val: num,
+            onUpdate: function() {
+                let updatedCount = zero.val.toFixed(decimals);
+                count.innerHTML = updatedCount;
+            }
+        });
+    }
+
     // counter animation
     let counts = document.querySelectorAll(".counts");
     if (counts) {
