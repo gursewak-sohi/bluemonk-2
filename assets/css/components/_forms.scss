@@ -1,8 +1,11 @@
 // Forms SCSS
 .form-unit {
+    position: relative;
     & label {
         margin-bottom: 0;
-        font-weight: 400;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
     }
     & textarea {
         height: 100px;
@@ -11,13 +14,14 @@
             height: 177px;
         }
     }
-    & .hint {
+    & .error-message {
         font-size: 10px;
-        line-height: 14px;
-        margin-top: 14px;
-        & b {
-            font-weight: 500;
-        }
+        line-height: 12px;
+        margin-top: 4px;
+        color: #b61010;
+        position: absolute;
+        bottom: -14px;
+        left: 0;
     }
     & .example {
         font-size: 13px;
@@ -30,22 +34,24 @@
         border-bottom: solid 1px rgba($black, 1);
         background: transparent;
         border-radius: 0;
-        padding: 10px 0;
-        font-size: 13px;
-        line-height: 24px;
+        padding: 12px 0;
+        font-size: 16px;
+        line-height: 28px;
         transition: $btn-transition;
         color: $black;
-        @include tablet {
-            font-size: 16px;
-            line-height: 24px;
-            padding: 10px 0;
-        }
         &::placeholder {
-            opacity: 1;
+            opacity: 0.3;
         }
         &:-ms-input-placeholder {}
         &::-ms-input-placeholder {}
-        &:focus {}
+        &:focus {
+            border-bottom: solid 1px #98C1D9;
+        }
+    }
+    &.error {
+        & .input-field {
+            border-bottom: solid 1px #B61010;
+        }
     }
 }
 .select-unit {

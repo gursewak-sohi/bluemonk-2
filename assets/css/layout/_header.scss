@@ -74,7 +74,6 @@
             @include tablet {
                 display: block;
             }
-            
             & span {
                 border-radius: 2px;
                 width: 16px;
@@ -183,7 +182,7 @@
                             text-decoration: none;
                             padding: 4px 0;
                             font-family: $font-lato;
-                            color: $black;
+                            color: inherit;
                             font-weight: 700;
                             @include tablet {
                                 height: 100%;
@@ -251,4 +250,36 @@
             }
         }
     }
+}
+
+.contact-page {
+    & .header-section {
+        mix-blend-mode: difference;
+        color: $white;
+        @include tablet {
+            mix-blend-mode: normal;
+        }
+        & .logo {
+            color: $white !important;
+        }
+        & .header-wrapper {
+            & > ul > li > a::before {
+                background-color: $white;
+                @include tablet {
+                    background-color: $white;
+                }
+            }
+        }
+        & .toggler {
+            & span {
+                &::after,
+                &::before {
+                    @include tablet {
+                        background-color: $white !important;
+                    }
+                }
+            }
+        }
+    }
+    
 }

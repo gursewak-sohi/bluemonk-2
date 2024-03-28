@@ -296,23 +296,24 @@
             });
         }
 
-
-        const animationFadeInOut = document.querySelectorAll('.animate-fadeInOut');
-        if (animationFadeInOut) {
-            gsap.registerPlugin(ScrollTrigger);
-            animationFadeInOut.forEach(section => {
-                let tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "center bottom",  
-                        end: "bottom top",   
-                        scrub: true,       
-                        markers: false      
-                    }
-                });
-                tl.fromTo(section, { autoAlpha: 0,  duration: 0.5 }, { autoAlpha: 1,  duration: 0.5 }).to(section, { autoAlpha: 0,  duration: 0.5 });
+        // Animation Fade IN
+        const animateFadeIn = document.querySelectorAll('.animate-fadeIn');
+        if (animateFadeIn) {
+            gsap.set(animateFadeIn, {  autoAlpha: 0 });
+            ScrollTrigger.batch(".animate-fadeIn", {
+                onEnter: elements => {
+                    gsap.to(elements, {
+                        autoAlpha: 1,
+                        stagger: 0.12,
+                        duration: 1,
+                        delay: 0.4
+                    });
+                },
+                once: false
             });
         }
+
+ 
 
 
     }

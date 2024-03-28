@@ -32,6 +32,7 @@
     position: relative;
     padding: 10px 32px 13px;
     border-radius: 50px;
+    gap: 12px;
     @include tablet {
         font-size: 14px;
         line-height: 20px;
@@ -69,6 +70,28 @@
     }
 }
 
+.btn-light {
+    color: $black;
+    border: 1px solid $white;
+    background-color: $white;
+    &:hover {
+        background-color: $black;
+        color: $white;
+        border-color: $black;
+    }
+}
+
+.btn-outline-mix {
+    color: $white;
+    border: 1px solid $white;
+    background-color: $black;
+    &:hover {
+        background-color: $white;
+        color: $black;
+        border-color: $white;
+    }
+}
+
 .btn-primary {
     color: $white;
     border: 1px solid $primary;
@@ -93,6 +116,7 @@
  
  
  
+ 
 .btn-link {
     text-decoration: none;
     position: relative;
@@ -110,7 +134,7 @@
     &:hover {
         &::before {
             width: 100%;
-            @include laptop {
+            @include tablet {
                 width: 0;
             }
         }
