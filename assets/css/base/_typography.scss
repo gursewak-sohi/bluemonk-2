@@ -37,6 +37,18 @@ h2,
     }
 }
 
+h4,
+.h4 {
+    font-size: 32px;
+    line-height: 35.5px;
+    font-family: $font-lato;
+    font-weight: 700;
+    @include tablet {
+        font-size: 24px;
+        line-height: 26.4px; 
+    }
+}
+
 h6,
 .h6 {
     font-family: $font-lato;
@@ -84,17 +96,7 @@ p, .p {
 
 
 
-h4,
-.h4 {
-    font-size: 32px;
-    line-height: 35.5px;
-    font-family: $font-lato;
-    font-weight: 700;
-    @include tablet {
-        font-size: 24px;
-        line-height: 26.4px; 
-    }
-}
+
 
 h5,
 .h5 {
